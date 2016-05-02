@@ -1,7 +1,7 @@
 ﻿using ToDoList.Models;
 using Xunit;
 
-namespace ToDoLists.Tests
+namespace ToDoList.Tests
 {
     public class ItemTest
     {
@@ -10,10 +10,9 @@ namespace ToDoLists.Tests
         {
             //Arrange
             var item = new Item();
-
+            item.Description = "Wash the dog";
             //Act
             var result = item.Description;
-
             //Assert
             Assert.Equal("Wash the dog", result);
         }

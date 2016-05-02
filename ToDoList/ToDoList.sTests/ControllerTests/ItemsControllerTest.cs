@@ -1,40 +1,30 @@
-﻿using System.Collections.Generic;
+﻿using System;
 using Microsoft.AspNet.Mvc;
 using Microsoft.Data.Entity;
+using System.Collections.Generic;
 using ToDoList.Controllers;
 using ToDoList.Models;
 using Xunit;
 
-namespace ToDoLists.Tests
+namespace ToDoList.Tests
 {
     public class ItemsControllerTest
     {
         [Fact]
-        public void Get_ViewResult_Index_Test()
+        public void Post_MethodAddsItem_Test()
         {
-            //Arrange
+            // Arrange
             ItemsController controller = new ItemsController();
+            Item testItem = new Item();
+            testItem.Description = "test item";
 
-            //Act
-            var result = controller.Index();
-
-            //Assert
-            Assert.IsType<ViewResult>(result);
-        }
-
-        [Fact]
-        public void Get_ModelList_Index_Test()
-        {
-            //Arrange
+            // Act
+            controller.Create(testItem);
             ViewResult indexView = new ItemsController().Index() as ViewResult;
+            var collection = indexView.ViewData.Model as IEnumerable<Item>;
 
-
-         
-            //Act
-            var result = indexView.ViewData.Model;
-
-            //Assert
-            Assert.IsType<List<Item>>(result);
+            // Assert
+            Assert.Contains<Item>(testItem, collection);
         }
     }
 }

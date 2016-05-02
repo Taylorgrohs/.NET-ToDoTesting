@@ -14,9 +14,25 @@ namespace ToDoList.Models
         [Key]
         public int ItemId { get; set; }
         public string Description { get; set; }
-        public bool Done { get; set; }
-        public int CategoryId { get; set; }
-        public virtual Category Category { get; set; }
+
+        public override bool Equals(System.Object otherItem)
+        {
+            if (!(otherItem is Item))
+            {
+                return false;
+            }
+            else
+            {
+                Item newItem = (Item)otherItem;
+                return this.ItemId.Equals(newItem.ItemId);
+            }
+        }
+
+        public override int GetHashCode()
+        {
+            return this.ItemId.GetHashCode();
+        }
     }
+
 }
 

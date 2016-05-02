@@ -14,7 +14,7 @@ Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "ToDoList", "src\ToDoList\To
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{65C5E20C-3A1E-4968-823A-1447D348F9E3}"
 EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "ToDoLists.Tests", "ToDoList.sTests\ToDoLists.Tests.xproj", "{39238496-3CE1-4235-90F0-6B492203EAA3}"
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "ToDoList.Tests", "ToDoList.sTests\ToDoList.Tests.xproj", "{39238496-3CE1-4235-90F0-6B492203EAA3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
